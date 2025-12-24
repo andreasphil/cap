@@ -1,0 +1,24 @@
+{
+  "name": "@andreasphil/cap",
+  "version": "0.0.0",
+  "description": "Almost-drop-in replacement for custom confirm, alert, and prompt dialogs",
+  "author": "Andreas Philippi",
+  "license": "MIT",
+  "type": "module",
+  "repository": "https://github.com/andreasphil/cap",
+  "exports": {
+    ".": {
+      "import": "./mod.js",
+      "types": "./dist/mod.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "node --run build:types",
+    "build:types": "tsc",
+    "preversion": "node --run build && git add ./dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
