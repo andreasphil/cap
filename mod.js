@@ -1,9 +1,9 @@
 /**
  * @param {{
- *  message: string;
- *  showCancel: boolean;
- *  showPrompt: boolean;
- *  onClose: (value: string | boolean) => void;
+ *   message: string;
+ *   showCancel: boolean;
+ *   showPrompt: boolean;
+ *   onClose: (value: string | boolean) => void;
  * }} state
  * @returns {HTMLDialogElement}
  */
@@ -47,13 +47,13 @@ function render(state) {
     dialog.close();
   });
 
-  /** @type {string | boolean } */
+  /** @type {string | boolean} */
   let returnValue = false;
 
   dialog.addEventListener("command", (event) => {
     // @ts-expect-error CommandEvent not available in types
     if (event.command !== "--confirm") return;
-    returnValue = state.showPrompt ? inputEl?.value ?? "" : true;
+    returnValue = state.showPrompt ? (inputEl?.value ?? "") : true;
     dialog.close();
   });
 
@@ -80,7 +80,7 @@ export function alert(message) {
   };
 
   const dialog = document.body.appendChild(
-    render({ message, showCancel: false, showPrompt: false, onClose })
+    render({ message, showCancel: false, showPrompt: false, onClose }),
   );
 
   dialog.showModal();
@@ -101,7 +101,7 @@ export function confirm(message) {
   };
 
   const dialog = document.body.appendChild(
-    render({ message, showCancel: true, showPrompt: false, onClose })
+    render({ message, showCancel: true, showPrompt: false, onClose }),
   );
 
   dialog.showModal();
@@ -122,7 +122,7 @@ export function prompt(message) {
   };
 
   const dialog = document.body.appendChild(
-    render({ message, showCancel: true, showPrompt: true, onClose })
+    render({ message, showCancel: true, showPrompt: true, onClose }),
   );
 
   dialog.showModal();

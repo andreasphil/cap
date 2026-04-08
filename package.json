@@ -2,10 +2,10 @@
   "name": "@andreasphil/cap",
   "version": "0.0.0",
   "description": "Almost-drop-in replacement for custom confirm, alert, and prompt dialogs",
-  "author": "Andreas Philippi",
   "license": "MIT",
-  "type": "module",
+  "author": "Andreas Philippi",
   "repository": "https://github.com/andreasphil/cap",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./mod.js",
