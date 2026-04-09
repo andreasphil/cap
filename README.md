@@ -10,24 +10,10 @@
 - 🌈 Promise-based and customizable
 - ✨ Looks great out of the box with [@andreasphil/design-system](https://github.com/andreasphil/design-system)
 
-## Installation
-
-From a CDN:
-
-```js
-import * as CAP from "https://esm.sh/gh/andreasphil/cap@<tag>";
-```
-
-With a package manager:
-
-```sh
-npm i github:andreasphil/cap#<tag>
-```
-
 ## Usage
 
 ```js
-import * as CAP from "@andreasphil/cap";
+import * as CAP from "cap.js";
 
 await CAP.alert("Alert");
 
@@ -38,16 +24,4 @@ const name = await CAP.prompt("What's your name?"); // -> string or null
 
 ## Development
 
-Packages are managed by [pnpm](https://pnpm.io). The following commands are available:
-
-```sh
-node --run build        # Typecheck and emit declarations
-```
-
 For a demo, open [index.html](./index.html) in a browser.
-
-## Credits
-
-This library uses a number of open source packages listed in [package.json](./package.json).
-
-Thanks 🙏
