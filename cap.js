@@ -75,6 +75,7 @@ function render(state) {
  * @returns {Promise<void>}
  */
 export function alert(message) {
+  /** @type {PromiseWithResolvers<void>} */
   const { promise, resolve } = Promise.withResolvers();
 
   const onClose = () => {
@@ -95,6 +96,7 @@ export function alert(message) {
  * @returns {Promise<boolean>}
  */
 export function confirm(message) {
+  /** @type {PromiseWithResolvers<boolean>} */
   const { promise, resolve } = Promise.withResolvers();
 
   /** @param {string | boolean} value */
@@ -116,6 +118,7 @@ export function confirm(message) {
  * @returns {Promise<string | null>}
  */
 export function prompt(message) {
+  /** @type {PromiseWithResolvers<string | null>} */
   const { promise, resolve } = Promise.withResolvers();
 
   /** @param {string | boolean} value */
